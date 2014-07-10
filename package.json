@@ -1,0 +1,17 @@
+{
+  "name": "satellite-streams",
+  "author": "Justin Sippel <justinsippel@gmail.com>",
+  "version": "0.0.1",
+  "description": "Example module that streams satellite data",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/satellite-streams/iexpect.git"
+  },
+  "main": "./index",
+  "devDependencies": {
+    "chai": "1.9.x"
+  }
+}
