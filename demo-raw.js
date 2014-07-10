@@ -1,4 +1,7 @@
 var ss = require('./');
+var StringifyStream = require('./stream-classes/stringify-stream');
 
 var rawStream = new ss.RawSatelliteStream();
-rawStream.on('data', function(d) { console.log(d); });
+var stringStream = new StringifyStream();
+
+rawStream.pipe(stringStream).pipe(process.stdout);
