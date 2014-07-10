@@ -1,4 +1,3 @@
-var common = require('../common.js');
 var https = require('https');
 var stream = require('stream');
 var util = require('util');
@@ -10,7 +9,7 @@ util.inherits(RawSatelliteStream, Readable);
 function RawSatelliteStream(options) {
 	Readable.call(this, { objectMode: true });
 
-	options = common.getOptions(options);
+	options = getOptions(options);
 	
 	this._id = options.id;
 	this._requestRate = options.requestRate;
@@ -47,5 +46,15 @@ RawSatelliteStream.prototype._makeRequest = function() {
 		});
 	});
 };
+
+function getOptions(options) {
+	options = options || {};
+
+	return {
+		id: options.id || 25544,
+		requestRate: options.requestRate || 2500,
+		rawStream: options.rawStream
+	};
+}
 
 module.exports = RawSatelliteStream;

@@ -1,6 +1,5 @@
 var stream = require('stream');
 var util = require('util');
-var common = require('../common');
 var RawSatelliteStream = require('./raw-satellite-stream');
 
 var Transform = stream.Transform;
@@ -10,7 +9,7 @@ util.inherits(PerSecondSatelliteStream, Transform);
 function PerSecondSatelliteStream(options) {
 	Transform.call(this, { objectMode: true });
 
-	options = common.getOptions(options);
+	options = options || {};
 
 	this.rawStream = options.rawStream || new RawSatelliteStream(options.id, options.requestRate);
 	this.rawStream.pipe(this);
@@ -18,7 +17,7 @@ function PerSecondSatelliteStream(options) {
 
 PerSecondSatelliteStream.prototype._calculate = function(current, previous) {
 	if(!current || !previous || !current.timestamp || !previous.timestamp) { return {}; }
-	
+
 	var timeDelta = current.timestamp - previous.timestamp;
 	var latDelta, longDelta;
 
