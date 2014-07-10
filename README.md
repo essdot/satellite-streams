@@ -1,10 +1,10 @@
 # Satellite Streams
 
-A module with streams that emit satellite data.
+A node module with streams that emit satellite data.
 
 ##RawSatelliteStream
 
-An object-mode stream that emits the raw objects collected from api.wheretheiss.at. Subclasses [stream.Readable](http://nodejs.org/api/stream.html#stream_class_stream_readable).
+An object-mode stream that emits the raw objects collected from [wheretheiss.at](http://wheretheiss.at/w/developer). Subclasses [stream.Readable](http://nodejs.org/api/stream.html#stream_class_stream_readable).
 
 * **ctor([options])**: Optionally specify the ID of the satellite (default 25544) and the request rate (default 2500ms).
 
