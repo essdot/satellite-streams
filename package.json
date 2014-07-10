@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/satellite-streams/iexpect.git"
+    "url": "git://github.com/satellite-streams/satellite-streams.git"
   },
   "main": "./index",
   "devDependencies": {
