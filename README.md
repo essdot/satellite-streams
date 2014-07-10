@@ -31,6 +31,12 @@ var rawStream = new ss.RawSatelliteStream({ id: 25544, requestRate: 1700 });
 var perSecondStream = new ss.PerSecondSatelliteStream({ rawStream: rawStream });
 ```
 
+### Other stream types
+
+* **StringifyStream**: Consumes an object-mode stream and outputs the `JSON.stringify()` equivalent of its data. Useful for piping object-mode streams to stdout in demos.
+
+* **NullSink**: Writable stream that consumes a readable stream and throws its data away. Used in tests to keep streams flowing while discarding the data.
+
 ### Installing
 `sh install.sh`
 
