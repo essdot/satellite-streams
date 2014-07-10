@@ -8,11 +8,21 @@ An object-mode stream that emits the raw objects collected from api.wheretheiss.
 
 * **ctor([options])**: Optionally specify the ID of the satellite (default 25544) and the request rate (default 2500ms).
 
+```javascript
+var ss = require('satellite-streams');
+var rawStream = new ss.RawSatelliteStream();
+```
+
 ##PerSecondSatelliteStream
 
 An object-mode stream that transforms a stream of positional data into longitude and latitude per-second data. Subclasses [stream.Transform](http://nodejs.org/api/stream.html#stream_class_stream_transform).
 
-* **ctor([options])**: Optionally specify the underlying raw stream object, or one will be constructed with the ID of the satellite and the request rate. If those are not provided, defaults will be used. This constructor pipes the raw stream into the new per-second stream
+* **ctor([options])**: Optionally specify the underlying raw stream object, or one will be constructed with the ID of the satellite and the request rate. If those are not provided, defaults will be used. After the raw stream is obtained, its `pipe()` function is called to pipe it into the newly-constructed per-second stream.
+
+```javascript
+var ss = require('satellite-streams');
+var rawStream = new ss.RawSatelliteStream();
+```
 
 ### Installing
 
