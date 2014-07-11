@@ -8,7 +8,7 @@ An object-mode stream that emits the raw objects collected from [wheretheiss.at]
 * **ctor([options])**: Optionally specify the ID of the satellite (default 25544) and the request rate (default 2500ms).
 
 ```javascript
-var ss = require('satellite-streams');  
+var ss = require('./');  
 
 var rawStream = new ss.RawSatelliteStream();
 // or
@@ -21,7 +21,7 @@ An object-mode stream that transforms a stream of positional data into longitude
 * **ctor([options])**: Optionally specify the underlying raw stream object, or one will be constructed with the ID of the satellite and the request rate. If those are not provided, defaults will be used. After the raw stream is obtained, its `pipe()` function is called to pipe it into the newly-constructed per-second stream.
 
 ```javascript
-var ss = require('satellite-streams');  
+var ss = require('./');  
 
 var perSecondStream = new ss.PerSecondSatelliteStream();
 // or
