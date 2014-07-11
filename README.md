@@ -18,7 +18,7 @@ var rawStream = new ss.RawSatelliteStream({ id: 25544, requestRate: 1700 });
 ##PerSecondSatelliteStream
 An object-mode stream that transforms a stream of positional data into longitude and latitude per-second data. Subclasses [stream.Transform](http://nodejs.org/api/stream.html#stream_class_stream_transform).
 
-* **ctor([options])**: Optionally specify the underlying raw stream object, or one will be constructed with the ID of the satellite and the request rate. If those are not provided, defaults will be used. After the raw stream is obtained, its `pipe()` function is called to pipe it into the newly-constructed per-second stream.
+* **ctor([options])**: Optionally specify the underlying raw stream object, or one will be constructed with the ID of the satellite and the request rate. If those are not provided, defaults will be used. After the raw stream is obtained, its `pipe` function is called to pipe it into the newly-constructed per-second stream.
 
 ```javascript
 var ss = require('./');  
@@ -31,9 +31,9 @@ var rawStream = new ss.RawSatelliteStream({ id: 25544, requestRate: 1700 });
 var perSecondStream = new ss.PerSecondSatelliteStream({ rawStream: rawStream });
 ```
 
-### Other stream types
+### Other stream types (used internally)
 
-* **StringifyStream**: Consumes an object-mode stream and outputs the `JSON.stringify()` equivalent of its data. Useful for piping object-mode streams to stdout in demos.
+* **StringifyStream**: Consumes an object-mode stream and outputs the `JSON.stringify` equivalent of its data. Useful for piping object-mode streams to stdout in demos. (Stdout is a string stream, so streams it consumes must output strings).
 
 * **NullSink**: Writable stream that consumes a readable stream and throws its data away. Used in tests to keep streams flowing while discarding the data.
 
