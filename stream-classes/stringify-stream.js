@@ -9,14 +9,10 @@ function StringifyStream(stream) {
 	Transform.call(this, { objectMode: true });
 
 	if(stream) {
-		this.pipeStream(stream);
+		this._stream = stream;
+		this._stream.pipe(this);
 	}
 }
-
-StringifyStream.prototype.pipeStream = function(stream) {
-	this._stream = stream;
-	this._stream.pipe(this);
-};
 
 StringifyStream.prototype._transform = function(chunk, encoding, done) {
 	if(chunk) {
