@@ -29,9 +29,9 @@ describe('Raw satellite stream', function(){
 		}, duration);
 	}
 
-	// A request should be made at T + 1700ms.
+	// A request should be made at T + 800ms.
 	it('request is delayed', function(done){
-		expectReadCalls(1, 1750, 1700, this, done);
+		expectReadCalls(1, 850, 800, this, done);
 	});
 
 	// Given a request rate of 500ms, and a duration of 950ms, 
