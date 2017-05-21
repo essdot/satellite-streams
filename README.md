@@ -49,4 +49,4 @@ To demo RawSatelliteStream: `node demo-raw.js`
 To demo PerSecondSatelliteStream: `node demo-per-second.js`
 
 #### Dependencies
-[Mocha](http://visionmedia.github.io/mocha/) is used for running unit tests. [Chai](http://chaijs.com/api/bdd/) for BDD-style unit tests.
+[Mocha](http://mochajs.org/) is used for running unit tests. [Chai](http://chaijs.com/api/bdd/) for BDD-style unit tests.
